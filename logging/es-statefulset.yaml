@@ -59,7 +59,7 @@ metadata:
     addonmanager.kubernetes.io/mode: Reconcile
 spec:
   serviceName: elasticsearch-logging
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       k8s-app: elasticsearch-logging
@@ -113,8 +113,9 @@ spec:
   - metadata:
       name: es-storage
     spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: standard
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: local-storage
       resources:
         requests:
           storage: 8Gi

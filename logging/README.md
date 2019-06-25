@@ -17,3 +17,8 @@
 ```bash
 for i in $(kubectl get node -o name) ; do kubectl label ${i} beta.kubernetes.io/fluentd-ds-ready=true ; done
 ```
+
+## TODO:
+
+- [ ] Use Elasticsearch / kibana operator see <https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html>
+- [ ] Use fluentd operator see <https://github.com/vmware/kube-fluentd-operator>
